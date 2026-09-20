@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#1E4E5A" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" type="image/svg+xml" href="img/icon.svg" />
+  <link rel="apple-touch-icon" href="img/icon-192.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>Intel NG</title>
+  <meta name="description" content="Intel NG — plateforme d'investissement nœuds de calcul" />
+  <link rel="preload" href="img/banner-intel.jpg" as="image" type="image/jpeg" />
+  <link rel="preload" href="img/machines/thumbs/chip-i7.jpg" as="image" type="image/jpeg" />
+  <!-- Polices système uniquement (plus rapide en 3G, zéro requête Google) -->
+  <link rel="stylesheet" href="styles.css?v=36" />
+</head>
+<body>
+  <div id="boot-loader" class="boot-loader" aria-busy="true">
+    <div class="boot-inner">
+      <div class="spinner" role="status" aria-label="Chargement"></div>
+      <p class="boot-label">Intel NG</p>
+    </div>
+  </div>
+  <div id="app" class="app"></div>
+  <div id="page-loader" class="page-loader is-hidden" aria-hidden="true"><div class="spinner spinner-sm"></div></div>
+  <div id="aria-live" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+  <div id="toast-root" class="toast-root" aria-live="polite"></div>
+  <div id="modal-root" class="modal-root is-hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title"></div>
+
+  <script>
+    /* Config — sur Netlify: mets l'URL HTTPS de ton backend (sans /api à la fin) */
+    window.__INTEL_NG_CONFIG__ = window.__INTEL_NG_CONFIG__ || {
+      /* Exemple: "https://intel-ng-api.onrender.com" */
+      apiBase: "",
+      timezone: "Africa/Douala",
+      adminBootstrap: [
+        { email: "wilstontadia@gmail.com", password: "IntelNG@2026", name: "Wilston" }
+      ]
+    };
+  </script>
+  <script defer src="js/cdn.js?v=36"></script>
+  <script defer src="js/store.js?v=36"></script>
+  <script defer src="js/i18n.js?v=36"></script>
+  <script defer src="js/api.js?v=36"></script>
+  <script defer src="js/validate.js?v=36"></script>
+  <script defer src="js/ui.js?v=36"></script>
+  <script defer src="js/pages.js?v=36"></script>
+  <script defer src="js/admin.js?v=36"></script>
+  <script defer src="js/main.js?v=36"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", function () {
+        navigator.serviceWorker.register("sw.js").catch(function () {});
+      });
+    }
+  </script>
+</body>
+</html>

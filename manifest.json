@@ -1,0 +1,17 @@
+{
+  "name": "Intel NG",
+  "short_name": "Intel NG",
+  "description": "Investissez, rechargez et récoltez vos gains — zone XAF",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0a1520",
+  "theme_color": "#0a1520",
+  "lang": "fr",
+  "icons": [
+    { "src": "img/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "img/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "img/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
